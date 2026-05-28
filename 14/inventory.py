@@ -1,0 +1,8 @@
+print('You will have to write prices of items in your inventory separated by ","')
+print('program will give you different sorted variants')
+prices = input('Write a price of items: ').split(',')
+prices = list(map(int, prices))
+print(f'by price from lowest to highest: {sorted(prices)}')
+print(f'by price from highest to lowest: {sorted(prices, reverse=True)}')
+print(f'by date from old to new: {prices}')
+print(f'by date from new to old: {prices[::-1]}')
