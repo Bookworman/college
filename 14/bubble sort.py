@@ -1,0 +1,31 @@
+import random
+flag = 0
+counter = 0
+N=10
+numbers=[]
+for i in range(N):
+    numbers.append(random.randint(1,100))
+print(numbers)
+"""
+while True:
+    flag = 0
+    for j in range (len(numbers) - 1):
+        if numbers[j] > numbers[j + 1]:
+            numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+            flag = 1
+    if flag == 0:
+        break
+"""
+while True:
+    if counter % N == 0:
+        flag = 0
+    if numbers[counter % N] > numbers[(counter + 1) % N]:
+        numbers[counter % N], numbers[(counter + 1) % N] = numbers[(counter + 1) % N], numbers[counter % N]
+        flag = 1
+    counter += 1
+    if flag == 0 and counter % N == 0:
+        break
+print(numbers)
+
+
+
