@@ -1,6 +1,5 @@
 import random
 flag = 0
-counter = 0
 N=10
 numbers=[]
 for i in range(N):
@@ -16,15 +15,15 @@ while True:
     if flag == 0:
         break
 """
-while True:
-    if counter % N == 0:
-        flag = 0
-    if numbers[counter % N] > numbers[(counter + 1) % N]:
-        numbers[counter % N], numbers[(counter + 1) % N] = numbers[(counter + 1) % N], numbers[counter % N]
-        flag = 1
-    counter += 1
-    if flag == 0 and counter % N == 0:
-        break
+while flag == 1:
+    flag = 0
+    counter = 0
+    while counter < N - 1:
+        if numbers[counter] > numbers[counter + 1]:
+            numbers[counter],numbers[counter + 1] = numbers[counter + 1], numbers[counter]
+            flag = 1
+        counter += 1
+
 print(numbers)
 
 
